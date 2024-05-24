@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="no" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lag dine loops</title>
+    <!-- importer Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">Velg skala og lengde på noter</h1>
+        <form action="/files" method="post">
+            <div class="input-field">
+                <select id="scale" name="scale" required>
+                    <option value="" disabled selected>Velg skala</option>
+                    <option value="C_dur">C dur</option>
+                    <option value="C_dur_pent">C dur pentatonic</option>
+                    <option value="G_dur">G dur</option>
+                    <option value="A_mol">A mol</option>
+                    <option value="A_mol_pent">A mol pentatonic</option>
+                </select>
+                <label for="scale">Skala</label>
+            </div>
+            <div class="input-field">
+                <select id="duration" name="duration" required>
+                    <option value="" disabled selected>Velg lengde på tonene</option>
+                    <option value="128">128</option>
+                    <option value="64">64</option>
+                    <option value="32">32</option>
+                </select>
+                <label for="duration">Lengde på tone</label>
+            </div>
+            <div class="input-field">
+                <select id="instrument" name="instrument" required>
+                    <option value="" disabled selected>Velg instrument</option>
+                    <option value="piano">Piano</option>
+                    <option value="bass">Bass</option>
+                    <option value="steel_drum">Steel drum</option>
+                </select>
+                <label for="duration">Instrument</label>
+            </div>
+            
+
+            <button type="submit" class="btn waves-effect blue-grey">Generer fil</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems);
+        });
+    </script>
+</body>
+</html>
