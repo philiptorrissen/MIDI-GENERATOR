@@ -4,7 +4,7 @@
     "jsmidgen": "^0.1.5"
   },
   "scripts": {
-    "run": "node loopmaster-server.js"
+    "start": "node loopmaster-server.js"
 
   }
 }
